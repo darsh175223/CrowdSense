@@ -26,15 +26,15 @@ interface ChartPoint {
   standalone: true,
   imports: [CommonModule, FormsModule],
   template: `
-    <div class="dashboard-container">
+    <div class="min-h-screen bg-[var(--background)] flex flex-col">
       <!-- Header -->
-      <header class="header">
-        <div class="header-content">
-          <div class="header-text">
-            <h1 class="header-title">Welcome to TrafficTrend</h1>
-            <p class="header-subtitle">Dashboard</p>
+      <header class="bg-[var(--background)] border-b border-[var(--border)] px-6 py-4 sticky top-0 z-[100]">
+        <div class="max-w-[800px] mx-auto flex justify-between items-center">
+          <div class="flex flex-col">
+            <h1 class="text-[1.25rem] font-bold text-[var(--text-primary)] m-0">Welcome to TrafficTrend</h1>
+            <p class="text-[0.875rem] text-[var(--text-secondary)] m-0">Dashboard</p>
           </div>
-          <button class="logout-button" (click)="handleLogout()" id="btn-logout" title="Logout">
+          <button class="p-2 bg-[var(--surface)] border-none rounded-lg text-[var(--text-secondary)] cursor-pointer transition-all duration-200 flex items-center justify-center hover:bg-[var(--surface-hover)] hover:text-[var(--text-primary)] hover:scale-105 active:scale-95" (click)="handleLogout()" id="btn-logout" title="Logout">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M9 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
               <polyline points="16,17 21,12 16,7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -45,11 +45,11 @@ interface ChartPoint {
       </header>
 
       <!-- Main Content -->
-      <main class="main-content">
+      <main class="flex-1 p-6 overflow-y-auto pb-[100px]">
         <!-- Input Tab -->
-        <div class="tab-content animate-fade-in" *ngIf="activeTab === 'input'">
-          <div class="card">
-            <div class="icon-circle">
+        <div class="max-w-[800px] mx-auto animate-fade-in" *ngIf="activeTab === 'input'">
+          <div class="bg-[var(--surface)] rounded-[24px] p-8 border border-[var(--border)] shadow-[var(--shadow-lg)] flex flex-col items-center">
+            <div class="w-16 h-16 rounded-full bg-[rgba(59,130,246,0.1)] flex items-center justify-center mb-5">
               <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M17 21V19C17 17.9391 16.5786 16.9217 15.8284 16.1716C15.0783 15.4214 14.0609 15 13 15H5C3.93913 15 2.92172 15.4214 2.17157 16.1716C1.42143 16.9217 1 17.9391 1 19V21" stroke="#3B82F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 <circle cx="9" cy="7" r="4" stroke="#3B82F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -57,8 +57,8 @@ interface ChartPoint {
                 <path d="M16 3.13C16.8604 3.35031 17.623 3.85071 18.1676 4.55232C18.7122 5.25392 19.0078 6.11683 19.0078 7.005C19.0078 7.89318 18.7122 8.75608 18.1676 9.45769C17.623 10.1593 16.8604 10.6597 16 10.88" stroke="#3B82F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
             </div>
-            <h2 class="card-title">Daily Traffic Input</h2>
-            <p class="card-subtitle">How many customers did you have today?</p>
+            <h2 class="text-[1.5rem] font-bold text-[var(--text-primary)] mb-2 text-center">Daily Traffic Input</h2>
+            <p class="text-[1rem] text-[var(--text-secondary)] mb-8 text-center">How many customers did you have today?</p>
 
             <div class="input-container">
               <input
@@ -100,9 +100,9 @@ interface ChartPoint {
         </div>
 
         <!-- Staffing Tab -->
-        <div class="tab-content animate-fade-in" *ngIf="activeTab === 'staffing'">
-          <div class="card">
-            <div class="icon-circle success">
+        <div class="max-w-[800px] mx-auto animate-fade-in" *ngIf="activeTab === 'staffing'">
+          <div class="bg-[var(--surface)] rounded-[24px] p-8 border border-[var(--border)] shadow-[var(--shadow-lg)] flex flex-col items-center">
+            <div class="w-16 h-16 rounded-full bg-[rgba(16,185,129,0.1)] flex items-center justify-center mb-5">
               <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M17 21V19C17 17.9391 16.5786 16.9217 15.8284 16.1716C15.0783 15.4214 14.0609 15 13 15H5C3.93913 15 2.92172 15.4214 2.17157 16.1716C1.42143 16.9217 1 17.9391 1 19V21" stroke="#10B981" stroke-width="2"/>
                 <circle cx="9" cy="7" r="4" stroke="#10B981" stroke-width="2"/>
@@ -111,8 +111,8 @@ interface ChartPoint {
                 <path d="M19 8H21M20 7V9" stroke="#1E293B" stroke-width="1"/>
               </svg>
             </div>
-            <h2 class="card-title">Staffing Schedule</h2>
-            <p class="card-subtitle">Recommended staff levels based on traffic.</p>
+            <h2 class="text-[1.5rem] font-bold text-[var(--text-primary)] mb-2 text-center">Staffing Schedule</h2>
+            <p class="text-[1rem] text-[var(--text-secondary)] mb-8 text-center">Recommended staff levels based on traffic.</p>
 
             <!-- Loading State -->
             <div class="loading-container" *ngIf="loadingStaffing">
@@ -233,16 +233,16 @@ interface ChartPoint {
         </div>
 
         <!-- Forecast Tab -->
-        <div class="tab-content animate-fade-in" *ngIf="activeTab === 'forecast'">
-          <div class="card">
-            <div class="icon-circle primary">
+        <div class="max-w-[800px] mx-auto animate-fade-in" *ngIf="activeTab === 'forecast'">
+          <div class="bg-[var(--surface)] rounded-[24px] p-8 border border-[var(--border)] shadow-[var(--shadow-lg)] flex flex-col items-center">
+            <div class="w-16 h-16 rounded-full bg-[rgba(59,130,246,0.1)] flex items-center justify-center mb-5">
               <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M3 3V21H21" stroke="#3B82F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 <path d="M7 12L12 7L16 11L21 6" stroke="#3B82F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
             </div>
-            <h2 class="card-title">Traffic History</h2>
-            <p class="card-subtitle">Recorded customer volume over time.</p>
+            <h2 class="text-[1.5rem] font-bold text-[var(--text-primary)] mb-2 text-center">Traffic History</h2>
+            <p class="text-[1rem] text-[var(--text-secondary)] mb-8 text-center">Recorded customer volume over time.</p>
 
             <!-- Loading State -->
             <div class="loading-container" *ngIf="loadingForecast">
@@ -456,125 +456,9 @@ interface ChartPoint {
     </div>
   `,
   styles: [`
-    .dashboard-container {
-      min-height: 100vh;
-      background-color: var(--background);
-      display: flex;
-      flex-direction: column;
-    }
 
-    /* Header */
-    .header {
-      background-color: var(--background);
-      border-bottom: 1px solid var(--border);
-      padding: 16px 24px;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
 
-    .header-content {
-      max-width: 800px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
 
-    .header-title {
-      font-size: 1.25rem;
-      font-weight: 700;
-      color: var(--text-primary);
-      margin: 0;
-    }
-
-    .header-subtitle {
-      font-size: 0.875rem;
-      color: var(--text-secondary);
-      margin: 0;
-    }
-
-    .logout-button {
-      padding: 8px;
-      background-color: var(--surface);
-      border: none;
-      border-radius: 8px;
-      color: var(--text-secondary);
-      cursor: pointer;
-      transition: all 0.2s ease;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .logout-button:hover {
-      background-color: var(--surface-hover);
-      color: var(--text-primary);
-      transform: scale(1.05);
-    }
-
-    .logout-button:active {
-      transform: scale(0.95);
-    }
-
-    /* Main Content */
-    .main-content {
-      flex: 1;
-      padding: 24px;
-      overflow-y: auto;
-      padding-bottom: 100px;
-    }
-
-    .tab-content {
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
-    /* Card */
-    .card {
-      background-color: var(--surface);
-      border-radius: 24px;
-      padding: 32px;
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow-lg);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .icon-circle {
-      width: 64px;
-      height: 64px;
-      border-radius: 50%;
-      background-color: rgba(59, 130, 246, 0.1);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 20px;
-    }
-
-    .icon-circle.success {
-      background-color: rgba(16, 185, 129, 0.1);
-    }
-
-    .icon-circle.primary {
-      background-color: rgba(59, 130, 246, 0.1);
-    }
-
-    .card-title {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: var(--text-primary);
-      margin-bottom: 8px;
-      text-align: center;
-    }
-
-    .card-subtitle {
-      font-size: 1rem;
-      color: var(--text-secondary);
-      margin-bottom: 32px;
-      text-align: center;
-    }
 
     /* Input Styles */
     .input-container {
