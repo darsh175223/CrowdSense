@@ -1,0 +1,39 @@
+# General
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
+.vscode/
+.idea/
+*.swp
+
+# Angular Frontend
+angular-frontend/node_modules/
+angular-frontend/dist/
+angular-frontend/.angular/
+angular-frontend/npm-debug.log
+angular-frontend/yarn-error.log
+angular-frontend/testem.log
+angular-frontend/coverage/
+angular-frontend/.sass-cache/
+angular-frontend/connect.lock
+angular-frontend/typings/
+
+# Spring Boot Backend
+SpringBootBackend/SpringBootBackend/.gradle/
+SpringBootBackend/SpringBootBackend/build/
+SpringBootBackend/SpringBootBackend/bin/
+SpringBootBackend/SpringBootBackend/out/
+SpringBootBackend/SpringBootBackend/.settings/
+SpringBootBackend/SpringBootBackend/.classpath
+SpringBootBackend/SpringBootBackend/.project
+SpringBootBackend/SpringBootBackend/HELP.md
+*.class
+
+# Python Backend
+PythonBackend/__pycache__/
+PythonBackend/*.pyc
+PythonBackend/.pytest_cache/
+PythonBackend/.venv/
+PythonBackend/venv/
+PythonBackend/env/

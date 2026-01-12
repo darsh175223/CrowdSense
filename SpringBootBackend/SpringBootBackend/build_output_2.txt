@@ -1,0 +1,41 @@
+
+> Task :compileJava FAILED
+C:\Users\darsh\Coding_Projects_2025\React_Native_App\SpringBootBackend\SpringBootBackend\src\main\java\com\example\SpringBootBackend\security\SecurityConfig.java:32: error: constructor DaoAuthenticationProvider in class DaoAuthenticationProvider cannot be applied to given types;
+        DaoAuthenticationProvider authProvider = new DaoAuthenticationProvider();
+                                                 ^
+  required: UserDetailsService
+  found:    no arguments
+  reason: actual and formal argument lists differ in length
+C:\Users\darsh\Coding_Projects_2025\React_Native_App\SpringBootBackend\SpringBootBackend\src\main\java\com\example\SpringBootBackend\security\SecurityConfig.java:33: error: cannot find symbol
+        authProvider.setUserDetailsService(userDetailsService);
+                    ^
+  symbol:   method setUserDetailsService(UserDetailsServiceImpl)
+  location: variable authProvider of type DaoAuthenticationProvider
+2 errors
+
+[Incubating] Problems report is available at: file:///C:/Users/darsh/Coding_Projects_2025/React_Native_App/SpringBootBackend/SpringBootBackend/build/reports/problems/problems-report.html
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':compileJava'.
+> Compilation failed; see the compiler output below.
+  C:\Users\darsh\Coding_Projects_2025\React_Native_App\SpringBootBackend\SpringBootBackend\src\main\java\com\example\SpringBootBackend\security\SecurityConfig.java:32: error: constructor DaoAuthenticationProvider in class DaoAuthenticationProvider cannot be applied to given types;
+          DaoAuthenticationProvider authProvider = new DaoAuthenticationProvider();
+                                                   ^
+    required: UserDetailsService
+    found:    no arguments
+    reason: actual and formal argument lists differ in length
+  C:\Users\darsh\Coding_Projects_2025\React_Native_App\SpringBootBackend\SpringBootBackend\src\main\java\com\example\SpringBootBackend\security\SecurityConfig.java:33: error: cannot find symbol
+          authProvider.setUserDetailsService(userDetailsService);
+                      ^
+    symbol:   method setUserDetailsService(UserDetailsServiceImpl)
+    location: variable authProvider of type DaoAuthenticationProvider
+  2 errors
+
+* Try:
+> Check your code and dependencies to fix the compilation error(s)
+> Run with --scan to generate a Build Scan (powered by Develocity).
+
+BUILD FAILED in 1s
+1 actionable task: 1 executed
