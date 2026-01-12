@@ -48,6 +48,21 @@ pipeline {
             }
         }
         
+        stage('Provision Infrastructure') {
+            steps {
+                dir('terraform') {
+                    // Ensure Terraform is installed on the Jenkins agent
+                    // Requires AWS credentials to be configured in Jenkins Credentials Binding
+                    
+                    // sh 'terraform init'
+                    // sh 'terraform plan -out=tfplan'
+                    // input message: 'Apply Plan?', ok: 'Apply' // Manual approval step
+                    // sh 'terraform apply tfplan'
+                    echo 'Terraform stage placeholder. Uncomment lines above to enable.'
+                }
+            }
+        }
+        
         stage('Python Microservice Check') {
             steps {
                  dir('PythonBackend') {

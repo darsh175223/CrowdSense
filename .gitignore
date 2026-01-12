@@ -6,6 +6,15 @@ Thumbs.db
 .vscode/
 .idea/
 *.swp
+.env
+
+# Terraform
+**/.terraform/
+*.tfstate
+*.tfstate.backup
+*.tfvars
+*.tfplan
+.terraform.lock.hcl
 
 # Angular Frontend
 angular-frontend/node_modules/
